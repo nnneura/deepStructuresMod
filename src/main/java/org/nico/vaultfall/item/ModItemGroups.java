@@ -54,6 +54,7 @@ public class ModItemGroups {
                                 entries.add(ModItems.NUCLEO_PROPULSION);
                                 entries.add(ModItems.PROPULSOR);
                                 entries.add(ModItems.NUCLEO_SELETHILITA);
+                                entries.add(ModItems.FRAGMENTO_EXO);
 
 // === 6. PLANTILLAS Y COMPONENTES DE MEJORA ===
                                 entries.add(ModItems.PLANTILLA_SELETHILITE);

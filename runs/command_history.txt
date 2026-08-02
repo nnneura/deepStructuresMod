@@ -1,20 +1,3 @@
-/enchant Player769 minecraft:sharpness 4
-/enchant Player769 minecraft:sharpness 5
-/enchant Player769 minecraft:sweeping_edge 3
-/time set day
-/difficulty peaceful
-/enchant Player769 minecraft:sharpness 5
-/enchant Player323 minecraft:sharpness 5
-/enchant Player178 minecraft:sharpness 5
-/summon zombie ~ ~1 ~ {HandItems:[{Count:1,id:"minecraft:totem_of_undying",Count:127},{}],ArmorItems:[{Count:1,id:netherite_boots,tag:{Enchantments:[{id:protection,lvl:4}]}},{Count:1,id:netherite_leggings,tag:{Enchantments:[{id:blastprotection,lvl:4}]}},{C
-/summon zombie ~ ~ ~ {Tags:["totem"],ArmorItems:[{id:"netherite_boots",components:{"enchantments":{levels:{"protection":4,"unbreaking":3}}}},{id:"netherite_leggings",components:{"enchantments":{levels:{"protection":4,"unbreaking":3}}}},{id:"netherite_chest
-/summon zombie ~ ~ ~ {ArmorItems:[{id:"netherite_boots",Count:1b,tag:{Enchantments:[{id:"protection",lvl:4s}]}},{id:"netherite_leggings",Count:1b,tag:{Enchantments:[{id:"protection",lvl:4s}]}},{id:"netherite_chestplate",Count:1b,tag:{Enchantments:[{id:"pro
-/give Player178 minecraft:command_block
-/difficulty hard
-/attribute @p minecraft:generic.attack_damage get
-/summon minecraft:giant
-/summon minecraft:giant}
-/summon minecraft:giant
 /effect give Player519 vaultfall:electrificado
 /weather clear
 /time set day
@@ -48,3 +31,20 @@
 /time set day
 /kill
 /effect give Player389 minecraft:regeneration infinite 20
+/enchant Player293 minecraft:sharpness 5
+/tp Player549 0 100 0
+/setblock ~ ~ ~ minecraft:diamond_ore
+/time set day
+/weather clear
+/time set day
+/gamerule randomTickSpeed 1000
+/gamerule randomTickSpeed 0
+/gamerule randomTickSpeed 1000
+/gamerule randomTickSpeed 0
+/give Player549 minecraft:jigsaw
+/time set day
+/difficulty peaceful
+/give Player549 minecraft:structure_block
+/kill @e
+/give Player549 minecraft:structure_block
+/place structure vaultfall:entrada_principal

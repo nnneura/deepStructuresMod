@@ -2,10 +2,7 @@ package org.nico.vaultfall.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeExporter;
-import net.minecraft.data.server.recipe.RecipeProvider;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.SmeltingRecipe;
@@ -159,6 +156,31 @@ public class VaultfallRecipeProvider extends FabricRecipeProvider {
 
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.VIGA_ACERO, 8)
+                .pattern("III")
+                .pattern(" I ")
+                .pattern("III")
+                .input('I', ModItems.LINGOTE_ACERO)
+                .criterion(hasItem(ModItems.LINGOTE_ACERO), conditionsFromItem(ModItems.LINGOTE_ACERO))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.REJILLA_ACERO, 4)
+                .pattern("BB")
+                .pattern("BB")
+                .input('B', ModItems.BARRA_ACERO)
+                .criterion(hasItem(ModItems.BARRA_ACERO), conditionsFromItem(ModItems.BARRA_ACERO))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LAMPARA_SELETHILITE, 1)
+                .pattern(" I ")
+                .pattern("BSB")
+                .pattern(" I ")
+                .input('I', ModItems.LINGOTE_ACERO)
+                .input('B', ModItems.BARRA_ACERO)
+                .input('S', ModItems.SELETHILITE)
+                .criterion(hasItem(ModItems.SELETHILITE), conditionsFromItem(ModItems.SELETHILITE))
+                .offerTo(exporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.MANGO_ACERO, 1)
                 .pattern("   ")
                 .pattern("RG ")
@@ -171,6 +193,11 @@ public class VaultfallRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.BARRA_ACERO), conditionsFromItem(ModItems.BARRA_ACERO))
 
                 .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SELETHILITE, 9)
+                .input(ModBlocks.SELETHILITE_BLOCK)
+                .criterion(hasItem(ModBlocks.SELETHILITE_BLOCK), conditionsFromItem(ModBlocks.SELETHILITE_BLOCK))
+                .offerTo(exporter, Identifier.of("vaultfall", "selethilite_from_block"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ESPADA_MECANICA_BASE, 1)
                 .pattern("  H")
@@ -209,6 +236,40 @@ public class VaultfallRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
 
                 .offerTo(exporter, Identifier.of("vaultfall", "polvo_acero_charcoal"));
+
+        // 1. Exo-Casco
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.EXO_CASCO, 1)
+                .pattern("FFF")
+                .pattern("F F")
+                .input('F', ModItems.FRAGMENTO_EXO)
+                .criterion(hasItem(ModItems.FRAGMENTO_EXO), conditionsFromItem(ModItems.FRAGMENTO_EXO))
+                .offerTo(exporter);
+
+// 2. Exo-Torso
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.EXO_TORSO, 1)
+                .pattern("F F")
+                .pattern("FFF")
+                .pattern("FFF")
+                .input('F', ModItems.FRAGMENTO_EXO)
+                .criterion(hasItem(ModItems.FRAGMENTO_EXO), conditionsFromItem(ModItems.FRAGMENTO_EXO))
+                .offerTo(exporter);
+
+// 3. Exo-Piernas
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.EXO_PIERNAS, 1)
+                .pattern("FFF")
+                .pattern("F F")
+                .pattern("F F")
+                .input('F', ModItems.FRAGMENTO_EXO)
+                .criterion(hasItem(ModItems.FRAGMENTO_EXO), conditionsFromItem(ModItems.FRAGMENTO_EXO))
+                .offerTo(exporter);
+
+// 4. Exo-Botas
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.EXO_BOTAS, 1)
+                .pattern("F F")
+                .pattern("F F")
+                .input('F', ModItems.FRAGMENTO_EXO)
+                .criterion(hasItem(ModItems.FRAGMENTO_EXO), conditionsFromItem(ModItems.FRAGMENTO_EXO))
+                .offerTo(exporter);
 
         offerBlasting(
                 exporter,

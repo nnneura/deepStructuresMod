@@ -69,6 +69,15 @@ public class ModItems {
             registerItem("nucleo_selethilita",
                     new Item(new Item.Settings()));
 
+    public static final Item FRAGMENTO_EXO =
+            registerItem("fragmento_exo",
+                    new Item(new Item.Settings().rarity(Rarity.RARE).component(DataComponentTypes.LORE,
+                            new LoreComponent(List.of(
+                                    Text.translatable("tooltip.vaultfall.fragmento_exo_line1").formatted(Formatting.DARK_GRAY),
+                                    Text.translatable("tooltip.vaultfall.fragmento_exo_line2").formatted(Formatting.DARK_GRAY)
+                                    )
+                            ))));
+
     public static final Item EXO_CASCO = registerItem("exo_casco",
             new ExoPieceItem(new Item.Settings().rarity(Rarity.RARE).maxCount(1),
                     ModTags.Items.HEAD_MODULES)
